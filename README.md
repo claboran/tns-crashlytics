@@ -1,4 +1,4 @@
-# MyDrawer
+# Nativescript crashlytics
 
 This project was generated with `tns create my-drawer-ng --template tns-template-drawer-navigation-ng`
 
@@ -9,5 +9,4 @@ Run `tns run android --bundle` to run it on your device. The app will automatica
 ## What is it
 
 Shows several aspects of NativeScript Angular development:
-* RadSideDrawer
-* Common Header as ActionBar
+* Crashlytics Integration

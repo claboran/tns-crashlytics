@@ -7,6 +7,17 @@ import * as app from 'tns-core-modules/application';
 import {ActivityIndicatorService} from '~/app/shared/services/activity-indicator.service';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/internal/operators/tap';
+import * as firebase from 'nativescript-plugin-firebase';
+import * as traceModule from 'tns-core-modules/trace';
+
+declare var java: any;
+
+const errorHandler: traceModule.ErrorHandler = {
+    handlerError(err) {
+        console.log(`Received Crash: ${err.message}`);
+        firebase.crashlytics.sendCrashLog(new java.lang.Exception(`${err.stack}`));
+    }
+};
 
 @Component({
     moduleId: module.id,
@@ -27,6 +38,10 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
+
+        // traceModule.setErrorHandler(errorHandler);
+
+        this.initFireBase();
         this._activatedUrl = '/home';
         this._sideDrawerTransition = new SlideInOnTopTransition();
 
@@ -73,5 +88,17 @@ export class AppComponent implements OnInit {
 
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.closeDrawer();
+    }
+
+    private initFireBase(): void {
+        firebase.init({crashlyticsCollectionEnabled: true}).then(
+            () => {
+                console.log(`firebase init done`);
+                firebase.crashlytics.sendCrashLog(new java.lang.Exception('Hello'));
+            },
+            error => {
+                console.log(`firebase init error: ${error}`);
+            }
+        );
     }
 }

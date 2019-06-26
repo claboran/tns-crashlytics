@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "465619240216",
+    "firebase_url": "https://mydrawer-crashlytics.firebaseio.com",
+    "project_id": "mydrawer-crashlytics",
+    "storage_bucket": "mydrawer-crashlytics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465619240216:android:d8ac73b16eaa9b8a",
+        "android_client_info": {
+          "package_name": "de.laboranowitsch.mydrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465619240216-kb337dnu61qoce9n48jlpd0cd2pa6vjv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyIvwzBVjfTIw-ZJBLgVs86h3F1j93sk8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465619240216-kb337dnu61qoce9n48jlpd0cd2pa6vjv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

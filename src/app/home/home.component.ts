@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+declare var java: any;
 
 @Component({
-    selector: "Home",
+    selector: 'Home',
     moduleId: module.id,
-    templateUrl: "./home.component.html"
+    templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
 
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         // Init your component properties here.
+        throw new java.lang.Exception('Crash');
     }
 
 }
